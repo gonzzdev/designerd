@@ -1,0 +1,84 @@
+---
+const SYSTEMS = [
+    {
+        title: "Duolingo",
+        link: "https://design.duolingo.com/",
+        image: "images/duolingo.png",
+    },
+    {
+        title: "Uber",
+        link: "https://base.uber.com/6d2425e9f/p/294ab4-base-design-system",
+        image: "images/uber.png",
+    },
+    {
+        title: "IBM",
+        link: "https://www.ibm.com/design/language/",
+        image: "images/ibm.png",
+    },
+    {
+        title: "Vercel",
+        link: "https://vercel.com/geist/brands",
+        image: "images/vercel.png",
+    },
+    {
+        title: "Starbucks",
+        link: "https://creative.starbucks.com/",
+        image: "images/starbucks.png",
+    },
+    {
+        title: "Twitch",
+        link: "https://www.dropbox.com/scl/fi/xflyox5rwv4j8f6buw3sc/Twitch-Brand-Guidelines.pdf?rlkey=sjtbvtv78dxel9z7fe8niac3p&e=1&dl=0",
+        image: "images/twitch.png",
+    },
+    {
+        title: "monday.com",
+        link: "https://www.brand-monday.com/",
+        image: "images/monday.png",
+    },
+]
+---
+<div class="system-group">       
+    {
+        SYSTEMS.map(({ image, title, link}) => (
+            <a href={link} target="_blank" rel="no referrer" class="image-container">
+                <div class="image-wrapper">
+                <img src={image} alt="Brand Guideline preview card" width="292" class="system-preview" />
+                </div>
+                <span>{title}</span>
+            </a>
+        ))
+    }
+</div>
+
+<style is:global>
+    .system-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 96px;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        width: 292px;
+        transition: 200ms;
+    }
+
+    .image-container:hover {
+        scale: 1.1;
+    }
+
+    .system-preview {
+        transition: 200ms;
+        margin-bottom: 12px;
+        border-bottom: 8px solid var(--primary-500);
+    }
+    
+    .system-preview:hover {
+        border: 2px solid var(--primary-500);
+        border-bottom: 8px solid var(--primary-500);
+    }
+</style>
